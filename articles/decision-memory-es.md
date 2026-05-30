@@ -1,5 +1,9 @@
 # Los agentes de código necesitan memoria durable, no solo contexto
 
+Este texto nace de una práctica concreta usando agentes de código en repos reales.
+El problema no fue que faltara contexto, sino que algunas decisiones importantes
+quedaban en lugares donde el repositorio no podía recordarlas.
+
 Cuando trabajamos con agentes de código, es normal pensar primero en contexto:
 archivos relevantes, instrucciones del proyecto, historial de la conversación,
 errores recientes, logs, planes y pruebas.
