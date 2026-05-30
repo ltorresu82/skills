@@ -62,3 +62,47 @@ Action:
 - Find the old provider decision.
 - Create a new ADR or update status according to repo convention.
 - Mark the old ADR as superseded and link the replacement.
+
+## Repository Decision Audit
+
+User request:
+
+> Audit this public package repo and propose initial ADRs. Do not edit files.
+
+Action:
+
+- Read repo guidance, README, package metadata, docs and high-signal source files.
+- Return a report before creating ADRs.
+- Separate accepted ADR candidates from pending candidates and implementation details.
+
+Example output shape:
+
+```text
+Accepted ADR candidates
+
+1. Public generic package scope
+   Evidence: AGENTS.md, README.md, package.json
+   Reason: future changes must not introduce private institutions, client-specific
+   names or non-public evidence.
+   Suggested action: create ADR.
+
+2. Credentials stay outside the repository
+   Evidence: AGENTS.md, docs/credentials.md, examples/*.env docs
+   Reason: affects security posture, examples, validation flow and public repo safety.
+   Suggested action: create ADR.
+
+Pending candidates
+
+1. Runtime dependency policy
+   Evidence: AGENTS.md says runtime dependencies require a clear technical reason.
+   Reason: durable policy exists, but audit should confirm whether it has been applied
+   consistently before marking it accepted.
+   Suggested action: candidate or proposed ADR.
+
+No ADR
+
+1. Test fixture names and local helper refactors.
+   Reason: implementation details that do not change package contracts or ownership.
+```
+
+For a concrete public-package example, see `firmagob-client-audit-demo.md`.

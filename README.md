@@ -47,6 +47,8 @@ deben quedar visibles para todo el equipo:
 ### Qué Hace
 
 - Detecta si un cambio debe crear o actualizar un ADR.
+- Audita un repo para proponer ADRs iniciales, candidatos pendientes y decisiones que
+  no deberían convertirse en ADR.
 - Clasifica decisiones como no ADR, candidata, propuesta, aceptada, actualización o
   reemplazo.
 - Respeta las convenciones y ubicaciones de ADR ya existentes en el repo.
@@ -97,6 +99,27 @@ No corresponde dejarlo solo como documentación de implementación porque futuro
 o desarrolladores necesitarán conocer esta decisión para no reconstruir estados
 paralelos ni romper la arquitectura.
 ```
+
+### Auditoría De Repositorio
+
+También puedes usarla para inventariar decisiones durables ya presentes en un repo:
+
+```text
+Usa decision-memory para auditar este repositorio y proponer memoria durable.
+No edites archivos todavía.
+
+Entrega:
+- candidatos a ADR aceptado;
+- candidatos pendientes;
+- ADRs existentes que deberían actualizarse;
+- decisiones que no requieren ADR;
+- evidencia por archivo y razón.
+```
+
+La auditoría debe producir primero un reporte. Solo después de revisar ese reporte
+conviene crear o actualizar ADRs.
+
+Demo pública: [`firmagob-client` audit](./skills/decision-memory/references/firmagob-client-audit-demo.md).
 
 ### Ejemplos De Clasificación
 
@@ -196,6 +219,8 @@ the whole team:
 ### What It Does
 
 - Detects whether a change should create or update an ADR.
+- Audits a repository to propose initial ADRs, pending candidates and decisions that
+  should not become ADRs.
 - Classifies decisions as no ADR, candidate, proposed, accepted, update, or supersede.
 - Preserves existing repo conventions and ADR locations.
 - Avoids marking unvalidated ideas as accepted decisions.
@@ -220,6 +245,27 @@ task touches durable decisions. Good trigger signals include:
 - auth, authorization, tenant, account, or resource-scope rules;
 - deployment, gateway, environment, secret, or promotion-flow decisions;
 - technical policy such as no silent fallbacks or no hidden technical debt.
+
+### Repository Audit
+
+You can also use it to inventory durable decisions already present in a repo:
+
+```text
+Use decision-memory to audit this repository and propose durable decision memory.
+Do not edit files yet.
+
+Return:
+- accepted ADR candidates;
+- pending candidates;
+- existing ADRs that should be updated;
+- decisions that do not require ADRs;
+- evidence paths and rationale.
+```
+
+The audit should produce a report first. Create or update ADRs only after reviewing that
+inventory.
+
+Public demo: [`firmagob-client` audit](./skills/decision-memory/references/firmagob-client-audit-demo.md).
 
 ### Classification Examples
 

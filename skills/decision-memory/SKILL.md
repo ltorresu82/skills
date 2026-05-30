@@ -87,6 +87,41 @@ Spanish framing:
    - At minimum, inspect the diff and run a whitespace check when Git is available:
      `git diff --check -- <changed-files>`.
 
+## Repository Decision Audit
+
+Use this mode when the user asks to initialize ADRs, scan a repo for missing decision
+memory, audit a repository, or produce a decision inventory.
+
+Default to a report first. Do not create or edit ADR files during an audit unless the
+user explicitly asks for file changes after seeing the proposed inventory.
+
+Audit workflow:
+
+1. Read repo guidance and public documentation first: `AGENTS.md`, README,
+   CONTRIBUTING, docs, plans, API specs, package metadata and architecture notes.
+2. Find existing ADRs or decision indexes.
+3. Inspect high-signal code boundaries only: public APIs, package entrypoints, config,
+   auth/security, persistence, runtime, deployment and examples. Avoid broad code
+   summaries.
+4. Produce an inventory grouped as:
+   - `Accepted ADR candidates`: decisions already backed by repo guidance, code,
+     README or committed docs.
+   - `Pending candidates`: important choices that are visible but not fully validated.
+   - `Existing ADR updates`: older ADRs that need clarification or superseding.
+   - `No ADR`: implementation details that should stay out of ADRs.
+5. For each item include evidence paths, classification, reason and suggested next
+   action. If evidence is weak, keep it as pending.
+
+Useful prompt:
+
+```text
+Use decision-memory to audit this repository and propose durable decision memory.
+Do not edit files yet.
+
+Return accepted ADR candidates, pending candidates, existing ADR updates and no-ADR
+items, with evidence paths and rationale.
+```
+
 ## What Belongs In Decision Memory
 
 Create or update decision memory for:
