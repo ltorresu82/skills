@@ -119,7 +119,8 @@ Entrega:
 La auditoría debe producir primero un reporte. Solo después de revisar ese reporte
 conviene crear o actualizar ADRs.
 
-Demo pública: [`firmagob-client` audit](./skills/decision-memory/references/firmagob-client-audit-demo.md).
+Demo pública bilingüe con estructura `docs/adr/`, índice y candidatos:
+[`firmagob-client` audit](./skills/decision-memory/references/firmagob-client-audit-demo.md).
 
 ### Ejemplos De Clasificación
 
@@ -265,7 +266,8 @@ Return:
 The audit should produce a report first. Create or update ADRs only after reviewing that
 inventory.
 
-Public demo: [`firmagob-client` audit](./skills/decision-memory/references/firmagob-client-audit-demo.md).
+Public bilingual demo with `docs/adr/` structure, index and pending candidates:
+[`firmagob-client` audit](./skills/decision-memory/references/firmagob-client-audit-demo.md).
 
 ### Classification Examples
 

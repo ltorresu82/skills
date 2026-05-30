@@ -79,6 +79,7 @@ Spanish framing:
 
 7. **Keep indexes and candidates aligned**
    - Update the ADR README/index if the repo has one.
+   - If creating a new ADR directory, include a `README.md` index in that directory.
    - If a decision is important but not accepted, add it to a "Pending candidates" or
      equivalent section.
 
@@ -100,6 +101,8 @@ Audit workflow:
 1. Read repo guidance and public documentation first: `AGENTS.md`, README,
    CONTRIBUTING, docs, plans, API specs, package metadata and architecture notes.
 2. Find existing ADRs or decision indexes.
+   - If no ADR directory exists and the user later asks to initialize ADR files, propose
+     `docs/adr/README.md` as the index plus one file per accepted/proposed ADR.
 3. Inspect high-signal code boundaries only: public APIs, package entrypoints, config,
    auth/security, persistence, runtime, deployment and examples. Avoid broad code
    summaries.
@@ -111,6 +114,8 @@ Audit workflow:
    - `No ADR`: implementation details that should stay out of ADRs.
 5. For each item include evidence paths, classification, reason and suggested next
    action. If evidence is weak, keep it as pending.
+6. Include the suggested ADR directory tree. The tree must include an ADR index README
+   and a pending-candidates section when candidates exist.
 
 Useful prompt:
 
