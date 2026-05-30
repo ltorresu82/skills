@@ -9,7 +9,7 @@ Convierte decisiones técnicas importantes en memoria durable del repositorio.
 Turn important technical decisions into durable repository memory.
 
 <p align="center">
-  <a href="#demos">Demos</a> · <a href="#artículos">Artículo ES</a> ·
+  <a href="#demos">Demos</a> · <a href="#artículos">Artículos</a> ·
   <a href="#español">Español</a> · <a href="#english">English</a>
 </p>
 
@@ -23,8 +23,7 @@ Turn important technical decisions into durable repository memory.
 
 Demo pública con estructura `docs/adr/`, índice y candidatos:
 [Español](./skills/decision-memory/references/firmagob-client-audit-demo-es.md) ·
-[English](./skills/decision-memory/references/firmagob-client-audit-demo-en.md) ·
-[Artículo ES](./articles/decision-memory-es.md)
+[English](./skills/decision-memory/references/firmagob-client-audit-demo-en.md)
 
 ## Artículos
 
