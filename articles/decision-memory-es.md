@@ -148,6 +148,42 @@ y frontend. Futuros cambios necesitarán conocer esta decisión para no reconstr
 paralelos ni romper la arquitectura.
 ```
 
+## Demo real
+
+Después de publicar el skill, lo apliqué en un repositorio público real:
+[`firmagob-client`](https://github.com/ltorresu82/firmagob-client), un paquete
+TypeScript para integrar FirmaGob Chile.
+
+El flujo fue deliberadamente en dos pasos:
+
+1. Primero el agente auditó el repositorio y dejó un reporte en
+   [`docs/decision-memory-audit.md`](https://github.com/ltorresu82/firmagob-client/blob/main/docs/decision-memory-audit.md).
+2. Ese reporte propuso cinco decisiones candidatas, cada una con evidencia desde el
+   repo.
+3. No creó ADRs de inmediato.
+4. Después de revisar el reporte, las decisiones aceptadas se materializaron como ADRs
+   en [`docs/adr/`](https://github.com/ltorresu82/firmagob-client/tree/main/docs/adr).
+
+Eso es importante porque un agente no debería llenar un repositorio de documentación
+solo porque puede hacerlo. Primero debe separar decisiones aceptadas, candidatas,
+deuda pendiente e implementación local. Después, con revisión humana, las decisiones
+durables pasan a memoria versionada.
+
+En esa demo quedaron ADRs sobre:
+
+- mantener el paquete público y genérico;
+- usar fuentes oficiales de FirmaGob como referencia;
+- mantener cero dependencias runtime salvo justificación técnica clara;
+- fallar explícitamente si falta configuración o secretos;
+- mantener el límite de firma PDF como preparación `ByteRange` más PKCS#7 externo.
+
+Los commits muestran el flujo completo:
+
+- [`fcedfd9`](https://github.com/ltorresu82/firmagob-client/commit/fcedfd9): reporte
+  de auditoría primero.
+- [`ba52610`](https://github.com/ltorresu82/firmagob-client/commit/ba52610): ADRs
+  creados después de revisar.
+
 ## Proyecto
 
 El skill está publicado como open source:
