@@ -9,7 +9,8 @@ Convierte decisiones técnicas importantes en memoria durable del repositorio.
 Turn important technical decisions into durable repository memory.
 
 <p align="center">
-  <a href="#español">Español</a> · <a href="#english">English</a>
+  <a href="#español">Español</a> · <a href="#english">English</a> ·
+  <a href="./articles/decision-memory-es.md">Artículo ES</a>
 </p>
 
 <p align="center">
@@ -17,6 +18,10 @@ Turn important technical decisions into durable repository memory.
     <img src="https://www.skills.sh/b/ltorresu82/skills" alt="skills.sh installs">
   </a>
 </p>
+
+## Artículos
+
+- [Los agentes de código necesitan memoria durable, no solo contexto](./articles/decision-memory-es.md)
 
 ## Español
 
