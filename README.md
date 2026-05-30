@@ -23,6 +23,8 @@ Turn important technical decisions into durable repository memory.
 `decision-memory` ayuda a agentes de código a decidir cuándo una decisión técnica debe
 pasar desde el chat, planes, revisiones o memoria privada del agente hacia memoria
 versionada del repositorio, normalmente mediante Architecture Decision Records (ADRs).
+Un ADR es un documento corto que registra una decisión técnica importante, por qué se
+tomó y qué consecuencias debe respetar el trabajo futuro.
 
 Su valor principal no es solo el uso explícito. Un agente compatible puede invocarla
 cuando detecta cambios que afectan arquitectura, fronteras de servicio, contratos de API,
@@ -90,6 +92,14 @@ No corresponde dejarlo solo como documentación de implementación porque futuro
 o desarrolladores necesitarán conocer esta decisión para no reconstruir estados
 paralelos ni romper la arquitectura.
 ```
+
+### Ejemplos De Clasificación
+
+| Caso | Clasificación | Razón |
+| --- | --- | --- |
+| Mover la fuente de verdad de un workflow desde backend a constantes de frontend. | Actualizar o reemplazar ADR | Cambia responsabilidad, contratos y evolución futura del sistema. |
+| Evaluar un nuevo proveedor de búsqueda vectorial, sin decisión aprobada todavía. | Candidata pendiente o ADR propuesto | Es arquitectónicamente relevante, pero aún no está validado. |
+| Cambiar copy de una pantalla o refactorizar una función local sin cambiar contratos. | No ADR | Es reversible y no condiciona decisiones futuras de arquitectura. |
 
 ### ADR De Ejemplo
 
@@ -162,6 +172,8 @@ También detecta alternativas comunes como `docs/adrs/`, `adr/`, `adrs/`,
 `decision-memory` helps coding agents decide when architecture knowledge should move
 from chat, plans, reviews, or private agent memory into versioned repository memory,
 usually Architecture Decision Records (ADRs).
+An ADR is a short document that records an important technical decision, why it was
+made, and which consequences future work must respect.
 
 Its main value is not only explicit usage. A compatible agent can invoke it when it
 detects changes that affect architecture, service boundaries, API contracts, runtime
@@ -203,6 +215,14 @@ task touches durable decisions. Good trigger signals include:
 - auth, authorization, tenant, account, or resource-scope rules;
 - deployment, gateway, environment, secret, or promotion-flow decisions;
 - technical policy such as no silent fallbacks or no hidden technical debt.
+
+### Classification Examples
+
+| Case | Classification | Reason |
+| --- | --- | --- |
+| Move a workflow source of truth from a backend service to frontend constants. | Update or supersede ADR | Changes ownership, contracts, and future system evolution. |
+| Evaluate a new vector search provider, with no approved decision yet. | Pending candidate or proposed ADR | Architecturally relevant, but not validated yet. |
+| Change screen copy or refactor a local function without changing contracts. | No ADR | Reversible and does not constrain future architecture decisions. |
 
 ### Example ADR
 
