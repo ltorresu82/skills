@@ -121,7 +121,8 @@ conviene crear o actualizar ADRs.
 
 Demo pública con estructura `docs/adr/`, índice y candidatos:
 [Español](./skills/decision-memory/references/firmagob-client-audit-demo-es.md) ·
-[English](./skills/decision-memory/references/firmagob-client-audit-demo-en.md).
+[English](./skills/decision-memory/references/firmagob-client-audit-demo-en.md) ·
+[Artículo ES](./articles/decision-memory-es.md).
 
 ### Ejemplos De Clasificación
 
@@ -269,7 +270,8 @@ inventory.
 
 Public demo with `docs/adr/` structure, index and pending candidates:
 [English](./skills/decision-memory/references/firmagob-client-audit-demo-en.md) ·
-[Español](./skills/decision-memory/references/firmagob-client-audit-demo-es.md).
+[Español](./skills/decision-memory/references/firmagob-client-audit-demo-es.md) ·
+[Artículo ES](./articles/decision-memory-es.md).
 
 ### Classification Examples
 
