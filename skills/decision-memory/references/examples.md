@@ -110,3 +110,19 @@ accepted ADR drafts and pending candidates, see:
 
 - `firmagob-client-audit-demo-en.md`
 - `firmagob-client-audit-demo-es.md`
+
+## Real Public Repository Run
+
+`decision-memory` was applied to the public package
+[`ltorresu82/firmagob-client`](https://github.com/ltorresu82/firmagob-client)
+in two commits:
+
+1. First, it produced an audit report without creating ADR files:
+   [`docs/decision-memory-audit.md`](https://github.com/ltorresu82/firmagob-client/blob/main/docs/decision-memory-audit.md)
+   in commit [`fcedfd9`](https://github.com/ltorresu82/firmagob-client/commit/fcedfd9).
+2. After review, the accepted candidates were materialized as ADRs under
+   [`docs/adr/`](https://github.com/ltorresu82/firmagob-client/tree/main/docs/adr)
+   in commit [`ba52610`](https://github.com/ltorresu82/firmagob-client/commit/ba52610).
+
+This demonstrates the intended flow: audit first, review the proposed decision
+inventory, then create durable ADRs only after acceptance.

@@ -21,9 +21,16 @@ Turn important technical decisions into durable repository memory.
 
 ## Demos
 
-Demo pública con estructura `docs/adr/`, índice y candidatos:
-[Español](./skills/decision-memory/references/firmagob-client-audit-demo-es.md) ·
-[English](./skills/decision-memory/references/firmagob-client-audit-demo-en.md)
+- Demo guiada con estructura `docs/adr/`, índice y candidatos:
+  [Español](./skills/decision-memory/references/firmagob-client-audit-demo-es.md) ·
+  [English](./skills/decision-memory/references/firmagob-client-audit-demo-en.md)
+- Caso real en un repositorio público:
+  [`firmagob-client`](https://github.com/ltorresu82/firmagob-client) ·
+  [reporte de auditoría](https://github.com/ltorresu82/firmagob-client/blob/main/docs/decision-memory-audit.md) ·
+  [ADRs creados](https://github.com/ltorresu82/firmagob-client/tree/main/docs/adr)
+- Flujo real versionado:
+  [reporte primero](https://github.com/ltorresu82/firmagob-client/commit/fcedfd9) ·
+  [ADRs después de revisar](https://github.com/ltorresu82/firmagob-client/commit/ba52610)
 
 ## Artículos
 
