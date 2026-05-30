@@ -105,6 +105,8 @@ No ADR
    Reason: implementation details that do not change package contracts or ownership.
 ```
 
-For a concrete bilingual public-package example with suggested ADR directory, README
-index, accepted ADR drafts and pending candidates, see
-`firmagob-client-audit-demo.md`.
+For concrete public-package examples with suggested ADR directory, README index,
+accepted ADR drafts and pending candidates, see:
+
+- `firmagob-client-audit-demo-en.md`
+- `firmagob-client-audit-demo-es.md`
