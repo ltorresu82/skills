@@ -1,0 +1,7 @@
+interface:
+  display_name: "Decision Memory"
+  short_description: "Durable repo memory for technical decisions"
+  icon_small: "./assets/logo.svg"
+  icon_large: "./assets/banner.svg"
+  brand_color: "#2563EB"
+  default_prompt: "Use $decision-memory to monitor architecture-impacting changes and identify decisions that should become ADRs, candidates, or updates."

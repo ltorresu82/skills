@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Decision Memory social preview</title>
+  <desc id="desc">Social preview image for Decision Memory skill.</desc>
+  <rect width="1280" height="640" rx="0" fill="#F8FAFC"/>
+  <path d="M0 500h1280v140H0z" fill="#E0F2FE"/>
+  <g transform="translate(118 142)">
+    <rect width="300" height="300" rx="68" fill="#0F172A"/>
+    <path d="M96 216V90h108M204 90v78" fill="none" stroke="#38BDF8" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="96" cy="216" r="27" fill="#22C55E"/>
+    <circle cx="96" cy="90" r="27" fill="#38BDF8"/>
+    <circle cx="204" cy="90" r="27" fill="#2563EB"/>
+    <rect x="150" y="168" width="88" height="58" rx="12" fill="#F8FAFC"/>
+    <text x="172" y="205" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="23" font-weight="800" fill="#0F172A">ADR</text>
+  </g>
+  <text x="490" y="276" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="78" font-weight="750" fill="#0F172A">Decision Memory</text>
+  <text x="496" y="348" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="31" fill="#334155">Durable repo memory for technical decisions.</text>
+  <text x="500" y="424" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="24" fill="#2563EB">agent skill • ADRs • candidates • accepted decisions</text>
+</svg>
