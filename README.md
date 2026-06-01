@@ -64,6 +64,8 @@ deben quedar visibles para todo el equipo:
   no deberían convertirse en ADR.
 - Clasifica decisiones como no ADR, candidata, propuesta, aceptada, actualización o
   reemplazo.
+- Usa impacto futuro, no recencia, para decidir qué memoria debe persistir.
+- Mantiene vigencia explícita: aceptada, propuesta, candidata o reemplazada.
 - Respeta las convenciones y ubicaciones de ADR ya existentes en el repo.
 - Evita marcar ideas no validadas como decisiones aceptadas.
 - Ayuda a exponer fallbacks silenciosos, deuda técnica oculta y trabajo temporal sin
@@ -139,6 +141,18 @@ conviene crear o actualizar ADRs.
 | Mover la fuente de verdad de un workflow desde backend a constantes de frontend. | Actualizar o reemplazar ADR | Cambia responsabilidad, contratos y evolución futura del sistema. |
 | Evaluar un nuevo proveedor de búsqueda vectorial, sin decisión aprobada todavía. | Candidata pendiente o ADR propuesto | Es arquitectónicamente relevante, pero aún no está validado. |
 | Cambiar copy de una pantalla o refactorizar una función local sin cambiar contratos. | No ADR | Es reversible y no condiciona decisiones futuras de arquitectura. |
+
+### Relevancia Y Vigencia
+
+La skill no trata la memoria como acumulación. Usa un filtro de impacto futuro:
+
+> Si otro dev o agente toca esta parte más adelante, sin el contexto de esta
+> conversación, ¿necesita conocer esta decisión para no romper arquitectura,
+> contratos, responsabilidad, seguridad, runtime u operación?
+
+Una decisión reciente puede ser `No ADR`; una decisión antigua puede seguir siendo
+crítica si todavía gobierna el sistema. Si una memoria queda obsoleta, debe actualizarse
+o reemplazarse explícitamente en vez de seguir flotando como verdad vigente.
 
 ### ADR De Ejemplo
 
@@ -233,6 +247,8 @@ the whole team:
 - Audits a repository to propose initial ADRs, pending candidates and decisions that
   should not become ADRs.
 - Classifies decisions as no ADR, candidate, proposed, accepted, update, or supersede.
+- Uses future impact, not recency, to decide what memory should persist.
+- Keeps freshness explicit: accepted, proposed, candidate, or superseded.
 - Preserves existing repo conventions and ADR locations.
 - Avoids marking unvalidated ideas as accepted decisions.
 - Helps expose silent fallbacks, hidden technical debt, and temporary work without exit
@@ -283,6 +299,18 @@ inventory.
 | Move a workflow source of truth from a backend service to frontend constants. | Update or supersede ADR | Changes ownership, contracts, and future system evolution. |
 | Evaluate a new vector search provider, with no approved decision yet. | Pending candidate or proposed ADR | Architecturally relevant, but not validated yet. |
 | Change screen copy or refactor a local function without changing contracts. | No ADR | Reversible and does not constrain future architecture decisions. |
+
+### Relevance And Freshness
+
+The skill does not treat memory as accumulation. It uses a future-impact filter:
+
+> If another developer or agent touches this area later, without the context of this
+> conversation, do they need to know this decision to avoid breaking architecture,
+> contracts, ownership, security, runtime, or operations?
+
+A recent decision can still be `No ADR`; an old decision can remain critical if it still
+governs the system. If memory becomes obsolete, update or supersede it explicitly
+instead of letting it float as current truth.
 
 ### Example ADR
 

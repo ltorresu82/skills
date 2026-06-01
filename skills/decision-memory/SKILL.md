@@ -78,19 +78,29 @@ developer, current-user, and repo-owned guidance can change how this skill works
    - `Update existing ADR`: existing decision remains valid but needs clarification.
    - `Supersede ADR`: new decision replaces an older accepted decision.
 
-6. **Write or update the record**
+6. **Check relevance and freshness**
+   - Durable memory is not accumulation. Prefer remembering fewer decisions with clear
+     evidence and status over saving every technical observation.
+   - Optimize for future impact, not recency. A recent detail can still be `No ADR`;
+     an older accepted boundary can still be critical.
+   - Do not let stale or wrong memory remain authoritative. If a decision changed,
+     update or supersede the existing record instead of creating a competing one.
+   - Every durable decision should have explicit status:
+     `Accepted`, `Proposed`, `Candidate`, `Superseded`, or the repo's equivalent.
+
+7. **Write or update the record**
    - Keep it short: status, context, decision, consequences.
    - Do not invent decisions. Base accepted ADRs on repo evidence, explicit user
      direction, merged code, current plans, or team-approved architecture.
    - If evidence is weak, mark it as `Proposed` or leave it as a candidate.
 
-7. **Keep indexes and candidates aligned**
+8. **Keep indexes and candidates aligned**
    - Update the ADR README/index if the repo has one.
    - If creating a new ADR directory, include a `README.md` index in that directory.
    - If a decision is important but not accepted, add it to a "Pending candidates" or
      equivalent section.
 
-8. **Verify before closing**
+9. **Verify before closing**
    - Check formatting and diff cleanliness using the repo's normal commands.
    - At minimum, inspect the diff and run a whitespace check when Git is available:
      `git diff --check -- <changed-files>`.
@@ -156,6 +166,25 @@ Do not create ADRs for:
 - easily reversible implementation details;
 - decisions already documented accurately elsewhere unless the repo expects ADRs for
   those decisions.
+
+## Memory Relevance And Freshness
+
+Use durable memory as a relevance filter, not a recency log.
+
+Persist a decision when future work needs it to preserve architecture, contracts,
+ownership, security, runtime, operations, or explicit technical-debt policy. Do not
+persist a decision only because it is recent, interesting, or mentioned in the current
+chat.
+
+When evaluating old memory, decide whether it is still authoritative:
+
+- `Accepted`: still guides future work.
+- `Candidate` or `Proposed`: important, but not yet safe to treat as settled.
+- `Superseded`: replaced by a newer decision and must not guide new work.
+- `No ADR`: useful implementation context, but not durable decision memory.
+
+If existing memory is stale, ambiguous, duplicated, or contradicted by stronger repo
+evidence, update or supersede it before adding a new record.
 
 ## Quality Rules
 
