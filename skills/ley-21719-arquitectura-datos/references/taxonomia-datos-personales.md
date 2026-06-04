@@ -2,6 +2,16 @@
 
 Usa esta taxonomia para revisar modelos, APIs, planillas, logs y documentos.
 
+## Regla general
+
+Trata un dato como personal si identifica o puede identificar directa o
+indirectamente a una persona natural, por si solo o combinado con otros datos.
+
+El listado siguiente es orientativo, no cerrado. Si un campo, documento, evento,
+identificador tecnico o combinacion de atributos permite identificar, contactar,
+ubicar, perfilar, evaluar o singularizar a una persona, debe revisarse como dato
+personal.
+
 ## Como usar esta taxonomia
 
 No partas buscando solo RUT, email o telefono. Parte preguntando:
