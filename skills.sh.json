@@ -6,6 +6,11 @@
       "title": "Decision Memory",
       "description": "Skills for durable repository memory, ADRs, and technical decision stewardship.",
       "skills": ["decision-memory"]
+    },
+    {
+      "title": "Ley 21.719",
+      "description": "Skills para arquitectura de datos personales y privacidad por diseno en Chile.",
+      "skills": ["ley-21719-arquitectura-datos"]
     }
   ]
 }

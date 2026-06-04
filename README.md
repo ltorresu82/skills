@@ -1,4 +1,28 @@
-# Decision Memory Skill
+# Agent Skills
+
+Coleccion publica de skills para agentes de IA.
+
+## Skills
+
+### `decision-memory`
+
+Convierte decisiones tecnicas importantes en memoria durable del repositorio.
+
+### `ley-21719-arquitectura-datos`
+
+Framework y skill para traducir la Ley 21.719 de Chile a decisiones tecnicas de
+arquitectura, datos y software.
+
+Ayuda a revisar sistemas, modelos de datos, APIs, logs, planillas y proveedores para
+identificar datos personales, uso de RUT/email/telefono como identificadores,
+retencion, derechos de titulares, tokenizacion, anonimizacion y evidencia tecnica.
+
+Ejemplo:
+
+```text
+Usa ley-21719-arquitectura-datos para revisar este esquema SQL e identificar datos
+personales, riesgos tecnicos y recomendaciones de arquitectura.
+```
 
 <p align="center">
   <img src="./skills/decision-memory/assets/banner.svg" alt="Decision Memory - Turn technical decisions into durable repo memory" width="900">
