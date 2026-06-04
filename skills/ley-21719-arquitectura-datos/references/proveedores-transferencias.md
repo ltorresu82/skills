@@ -26,6 +26,8 @@ almacenan o reciben datos personales.
 - Datos tratados.
 - Finalidad.
 - Pais de almacenamiento/procesamiento.
+- Si el pais u organizacion ofrece nivel adecuado de proteccion o que garantias
+  existen.
 - Subencargados.
 - Medidas de seguridad.
 - Retencion y devolucion/eliminacion al termino.
@@ -41,6 +43,7 @@ almacenan o reciben datos personales.
 - Transferencias internacionales no mapeadas.
 - Proveedores IA que reciben prompts con datos personales.
 - Falta de proceso para eliminar o bloquear datos en sistemas externos.
+- No poder acreditar por que una transferencia internacional es licita.
 
 ## Recomendacion de arquitectura
 
@@ -50,4 +53,6 @@ Reducir lo que se envia:
 - evitar RUT/email/telefono en integraciones si no son necesarios;
 - enviar datos agregados o anonimizados para analytics;
 - registrar cada flujo externo en el inventario;
-- exigir capacidad de eliminacion, bloqueo y respuesta ante incidentes.
+- exigir capacidad de eliminacion, bloqueo y respuesta ante incidentes;
+- mantener evidencia de garantias, autorizaciones o evaluacion de adecuacion cuando
+  exista transferencia internacional.

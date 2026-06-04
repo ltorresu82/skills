@@ -52,13 +52,32 @@ Riesgo tipico: combinaciones que permiten reidentificar aunque no exista RUT o e
 - Biometria.
 - Datos geneticos.
 - Vida sexual.
+- Orientacion sexual.
+- Identidad de genero.
 - Creencias religiosas.
 - Opinion politica.
 - Afiliacion sindical.
+- Afiliacion gremial.
 - Origen racial o etnico.
-- Datos de ninos, ninas y adolescentes.
+- Situacion socioeconomica.
+- Convicciones ideologicas o filosoficas.
+- Perfil biologico humano.
 
 Requieren controles reforzados y revision juridica mas estricta.
+
+## Categorias especiales de datos personales
+
+No todo dato especialmente regulado es necesariamente "dato sensible" en todos los
+casos. En auditorias tecnicas, separa estas categorias para no mezclar reglas:
+
+- Datos personales de ninos, ninas y adolescentes.
+- Datos personales sensibles de adolescentes menores de dieciseis anos.
+- Datos de geolocalizacion.
+- Datos con fines historicos, estadisticos, cientificos, de estudios o
+  investigacion.
+
+Riesgo tipico: tratarlos como datos comunes y no levantar finalidad, autorizacion,
+medidas especificas, anonimizar publicaciones o evaluar riesgos.
 
 ## Datos financieros, comerciales y laborales
 

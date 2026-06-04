@@ -6,6 +6,8 @@
 - [ ] Sabemos que planillas, reportes y dashboards contienen datos personales.
 - [ ] Sabemos que proveedores acceden o procesan datos personales.
 - [ ] Tenemos identificadas las categorias de datos personales y sensibles.
+- [ ] Tenemos identificadas categorias especiales: NNA, geolocalizacion, biometria,
+      salud, perfil biologico, fines historicos/estadisticos/cientificos.
 
 ## Identificadores
 
@@ -22,6 +24,18 @@
 - [ ] Los formularios no piden datos innecesarios.
 - [ ] Los logs no guardan payloads con datos personales sin necesidad.
 - [ ] Los reportes y exports aplican minimizacion.
+- [ ] Las APIs y dashboards aplican proteccion de datos desde el diseno y por defecto.
+
+## Transparencia
+
+- [ ] Existe politica de tratamiento con fecha y version.
+- [ ] Estan identificados responsable, representante y canal de contacto.
+- [ ] Estan publicadas o disponibles categorias de datos, finalidades, base de
+      legitimidad, destinatarios y fuente.
+- [ ] Se informa periodo de conservacion.
+- [ ] Se informa el canal para ejercer derechos y reclamar ante la Agencia.
+- [ ] Se informa retiro del consentimiento cuando aplica.
+- [ ] Se informa logica y consecuencias de decisiones automatizadas cuando existan.
 
 ## Seguridad y trazabilidad
 
@@ -34,7 +48,10 @@
 ## Retencion y derechos
 
 - [ ] Hay plazos o criterios de retencion por finalidad.
+- [ ] Existe proceso para acceso.
+- [ ] Existe proceso para rectificacion.
 - [ ] Existe proceso para supresion.
+- [ ] Existe proceso para oposicion.
 - [ ] Existe proceso para bloqueo temporal.
 - [ ] Existe proceso para portabilidad.
 - [ ] Se puede localizar a una persona en sistemas relevantes.
@@ -43,6 +60,8 @@
 
 - [ ] Existe inventario de proveedores que tratan datos personales.
 - [ ] Se conoce pais de tratamiento/almacenamiento.
+- [ ] Existe evidencia de nivel adecuado, garantias o autorizacion para transferencias
+      internacionales cuando corresponda.
 - [ ] Hay contratos o anexos de tratamiento de datos.
 - [ ] Se conocen subencargados relevantes.
 - [ ] Se puede pedir eliminacion/bloqueo al proveedor.
@@ -52,4 +71,12 @@
 - [ ] No se envian datos personales a modelos IA sin finalidad y control.
 - [ ] Prompts, respuestas y logs de IA se revisan como tratamiento de datos.
 - [ ] Decisiones automatizadas que afecten personas estan identificadas.
+- [ ] Perfilamiento y logica aplicada estan documentados cuando corresponda.
 - [ ] Hay supervision humana cuando corresponde.
+
+## Evaluacion de impacto
+
+- [ ] Tratamientos de alto riesgo estan identificados.
+- [ ] Datos sensibles y categorias especiales tienen evaluacion de riesgos.
+- [ ] Medidas de mitigacion estan documentadas.
+- [ ] Pendientes de criterio de Agencia quedan marcados para validacion legal/DPO.

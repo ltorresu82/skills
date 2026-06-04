@@ -42,6 +42,21 @@ El titular debe poder entender quien trata sus datos, para que, por cuanto tiemp
 con quienes se comparten. Tecnologicamente, esto requiere inventario, trazabilidad y
 versionado de politicas/consentimientos cuando corresponda.
 
+Como minimo revisa si existe informacion publica o disponible sobre:
+
+- politica de tratamiento, fecha y version;
+- responsable, representante y canal de contacto;
+- categorias de datos y universo de titulares;
+- destinatarios o cesiones previstas;
+- finalidades y base de legitimidad;
+- medidas de seguridad;
+- derechos de los titulares y canal para ejercerlos;
+- transferencias internacionales;
+- periodo de conservacion;
+- fuente de los datos;
+- retiro del consentimiento cuando aplica;
+- decisiones automatizadas, perfilamiento, logica aplicada y consecuencias.
+
 ## Seguridad
 
 Aplicar medidas tecnicas y organizativas proporcionales al riesgo:
@@ -56,6 +71,30 @@ Aplicar medidas tecnicas y organizativas proporcionales al riesgo:
 
 Seguridad no reemplaza privacidad. Un sistema cifrado igual puede tratar datos de forma
 excesiva o sin finalidad.
+
+## Proteccion desde el diseno y por defecto
+
+Los sistemas deben aplicar medidas tecnicas y organizativas desde el diseno para que,
+por defecto, solo se traten los datos personales especificos y estrictamente
+necesarios para la actividad.
+
+En revision tecnica, busca:
+
+- formularios con campos innecesarios;
+- APIs que retornan mas datos de los necesarios;
+- permisos amplios por defecto;
+- dashboards con identificadores directos;
+- retencion indefinida;
+- logs con payload completo.
+
+## Evaluacion de impacto
+
+Marca como candidato a evaluacion de impacto todo tratamiento de alto riesgo,
+especialmente si involucra datos sensibles, categorias especiales, monitoreo,
+perfilamiento, decisiones automatizadas, gran escala, tecnologias nuevas o
+proveedores con transferencia internacional. La Agencia podra emitir criterios y
+listas orientativas; hasta entonces, reporta la necesidad como punto de validacion
+legal/DPO.
 
 ## Confidencialidad
 

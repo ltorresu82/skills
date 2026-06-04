@@ -54,6 +54,26 @@ cuando corresponda. Revisa si el sistema puede:
 Los sistemas deben poder responder que datos se tratan, con que finalidad y permitir
 correccion de datos inexactos cuando proceda.
 
+## Oposicion
+
+El sistema debe poder registrar y aplicar oposiciones cuando proceda. En la practica
+puede requerir excluir a la persona de marketing, perfilamiento, comunicaciones,
+tratamientos basados en interes legitimo u otros procesos definidos por validacion
+legal.
+
+## Decisiones automatizadas y perfilamiento
+
+Si existen decisiones automatizadas o perfilamiento, el inventario tecnico debe
+registrar:
+
+- sistema o modelo utilizado;
+- datos de entrada;
+- finalidad;
+- logica general aplicada;
+- consecuencias previstas para el titular;
+- intervencion humana o canal de revision cuando corresponda;
+- evidencia de pruebas, sesgos, versionado y monitoreo.
+
 ## Checklist tecnico minimo
 
 - Existe `person_id` o identificador interno consistente?
@@ -62,3 +82,5 @@ correccion de datos inexactos cuando proceda.
 - Los proveedores pueden ejecutar eliminacion/bloqueo?
 - Existen plazos de retencion por finalidad?
 - Hay evidencia de solicitudes y respuestas?
+- Se puede aplicar oposicion cuando proceda?
+- Se registran decisiones automatizadas y perfilamiento?

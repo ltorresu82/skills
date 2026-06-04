@@ -30,7 +30,13 @@ Completar con 3 a 5 hallazgos principales, nivel de riesgo general y siguientes 
 - Logs y exports:
 - Retencion:
 - Derechos de titulares:
+- Transparencia:
+- Proteccion desde el diseno y por defecto:
+- Categorias especiales:
+- Decisiones automatizadas/perfilamiento:
+- Evaluacion de impacto:
 - Proveedores:
+- Transferencias internacionales:
 - Seguridad:
 - IA/automatizacion:
 
@@ -50,6 +56,8 @@ Describir si conviene:
 - Base legal:
 - Consentimiento:
 - Datos sensibles:
+- Categorias especiales:
+- Evaluacion de impacto:
 - Proveedores/transferencias:
 - Derechos:
 

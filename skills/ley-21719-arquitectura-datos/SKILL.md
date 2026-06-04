@@ -27,6 +27,7 @@ riesgos tecnicos y senala puntos que requieren validacion juridica o de DPO.
    - identificadores tecnicos;
    - atributos personales;
    - datos sensibles;
+   - categorias especiales de datos personales;
    - documentos o archivos con datos personales;
    - proveedores o transferencias.
 3. Evalua el tratamiento:
@@ -36,6 +37,10 @@ riesgos tecnicos y senala puntos que requieren validacion juridica o de DPO.
    - retencion;
    - acceso y trazabilidad;
    - derechos de titulares;
+   - deber de informacion y transparencia;
+   - privacidad desde el diseno y por defecto;
+   - evaluacion de impacto cuando existan tratamientos de mayor riesgo;
+   - decisiones automatizadas, perfilamiento y logica aplicada;
    - exportaciones, logs, respaldos e integraciones.
 4. Detecta patrones de riesgo:
    - RUT, email o telefono como primary key;
@@ -98,6 +103,8 @@ patron y recomendacion.
 Alto:
 
 - datos sensibles expuestos o sin controles claros;
+- categorias especiales sin reglas especificas: ninos, ninas y adolescentes,
+  geolocalizacion, biometria, salud o perfil biologico;
 - RUT/email/telefono como primary key en sistemas compartidos;
 - datos personales en logs, exports o planillas sin control;
 - proveedor externo con acceso a datos sin finalidad, contrato o destino claro;
@@ -108,6 +115,8 @@ Medio:
 - datos personales duplicados en varios sistemas;
 - campos personales sin retencion definida;
 - finalidad o base legal no documentada;
+- informacion de transparencia incompleta: responsable, politica, contacto,
+  categorias, destinatarios, fuente, retencion o decisiones automatizadas;
 - acceso amplio sin trazabilidad suficiente;
 - analytics con datos identificables cuando podria usar agregacion o anonimizacion.
 
