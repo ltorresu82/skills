@@ -1,6 +1,6 @@
 ---
 name: ley-21719-arquitectura-datos
-description: Revisa sistemas, modelos de datos, documentacion, APIs, planillas y decisiones tecnicas frente a la Ley 21.719 de Chile. Usa esta skill para identificar datos personales, RUT/email/telefono como identificadores, datos sensibles, riesgos en logs/exportaciones/proveedores, retencion, derechos de titulares, tokenizacion, anonimizacion, privacidad por diseno y evidencia tecnica. No reemplaza asesoria legal.
+description: Revisa sistemas, modelos de datos, documentacion, APIs, planillas, logs, documentos, proveedores, flujos de IA y decisiones tecnicas frente a la Ley 21.719 de Chile. Usa esta skill para identificar datos personales, datos sensibles, categorias especiales, finalidad, base legal, retencion, derechos de titulares, decisiones automatizadas, transferencias, tokenizacion, anonimizacion, privacidad por diseno y evidencia tecnica. RUT/email/telefono son casos criticos frecuentes, no el alcance completo. No reemplaza asesoria legal.
 ---
 
 # Ley 21.719: Arquitectura de Datos Personales
@@ -43,8 +43,11 @@ riesgos tecnicos y senala puntos que requieren validacion juridica o de DPO.
    - decisiones automatizadas, perfilamiento y logica aplicada;
    - exportaciones, logs, respaldos e integraciones.
 4. Detecta patrones de riesgo:
-   - RUT, email o telefono como primary key;
+   - datos personales recolectados sin finalidad o necesidad clara;
+   - datos sensibles o categorias especiales tratados como datos comunes;
+   - RUT, email, telefono u otro dato personal como primary key;
    - datos personales replicados en multiples sistemas;
+   - documentos, adjuntos, OCR, tickets o texto libre con datos personales;
    - planillas o reportes sin control;
    - logs con datos personales;
    - datos sensibles sin controles reforzados;
@@ -105,8 +108,10 @@ Alto:
 - datos sensibles expuestos o sin controles claros;
 - categorias especiales sin reglas especificas: ninos, ninas y adolescentes,
   geolocalizacion, biometria, salud o perfil biologico;
-- RUT/email/telefono como primary key en sistemas compartidos;
+- cualquier dato personal usado como primary key o identificador tecnico compartido,
+  incluyendo RUT/email/telefono;
 - datos personales en logs, exports o planillas sin control;
+- documentos, adjuntos, tickets, OCR o texto libre con datos personales sin gobierno;
 - proveedor externo con acceso a datos sin finalidad, contrato o destino claro;
 - ausencia de capacidad tecnica para localizar, eliminar, bloquear o exportar datos.
 
@@ -133,6 +138,13 @@ Hallazgos
 - [Alto] Tabla customers usa rut como primary key. Evidencia: schema.sql:12.
   Riesgo: expone un identificador personal como llave tecnica y facilita replicacion.
   Recomendacion: migrar a person_id interno y dejar rut como atributo gobernado.
+
+- [Medio] Tickets de soporte aceptan descripcion en texto libre sin clasificacion.
+  Evidencia: support-api.yaml:41.
+  Riesgo: puede almacenar salud, reclamos, direcciones, telefonos u otros datos
+  personales fuera del modelo gobernado.
+  Recomendacion: clasificar contenido, minimizar captura, aplicar retencion y evitar
+  indexacion o logs con payload completo.
 
 Preguntas para validar
 - Cual es la finalidad del campo fecha_nacimiento?

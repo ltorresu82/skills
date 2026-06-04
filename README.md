@@ -13,9 +13,13 @@ Convierte decisiones tecnicas importantes en memoria durable del repositorio.
 Framework y skill para traducir la Ley 21.719 de Chile a decisiones tecnicas de
 arquitectura, datos y software.
 
-Ayuda a revisar sistemas, modelos de datos, APIs, logs, planillas y proveedores para
-identificar datos personales, uso de RUT/email/telefono como identificadores,
-retencion, derechos de titulares, tokenizacion, anonimizacion y evidencia tecnica.
+Ayuda a revisar sistemas, modelos de datos, APIs, logs, planillas, documentos,
+proveedores y flujos de IA para identificar datos personales, datos sensibles,
+categorias especiales, finalidad, retencion, derechos de titulares, decisiones
+automatizadas, transferencias, tokenizacion, anonimizacion y evidencia tecnica.
+
+RUT, email y telefono son casos criticos frecuentes en Chile, pero no son el alcance
+completo de la skill.
 
 Ejemplo:
 

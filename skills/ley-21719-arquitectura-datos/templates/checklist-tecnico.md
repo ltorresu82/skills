@@ -9,13 +9,18 @@
 - [ ] Tenemos identificadas categorias especiales: NNA, geolocalizacion, biometria,
       salud, perfil biologico, fines historicos/estadisticos/cientificos.
 
-## Identificadores
+## Datos y artefactos
 
 - [ ] RUT no se usa como primary key.
 - [ ] Email no se usa como primary key.
 - [ ] Telefono no se usa como primary key.
+- [ ] Ningun dato personal se usa como primary key o identificador tecnico compartido
+      sin justificacion.
 - [ ] Existe un identificador interno no significativo (`person_id`, `customer_id` u otro).
 - [ ] Los identificadores personales son atributos gobernados.
+- [ ] Documentos, adjuntos, OCR, tickets, correos, grabaciones y texto libre estan
+      incluidos en el inventario.
+- [ ] Logs, trazas, backups, dumps, CSV, Excel y BI estan incluidos en el inventario.
 
 ## Finalidad y minimizacion
 

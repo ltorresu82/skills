@@ -2,6 +2,19 @@
 
 Usa esta taxonomia para revisar modelos, APIs, planillas, logs y documentos.
 
+## Como usar esta taxonomia
+
+No partas buscando solo RUT, email o telefono. Parte preguntando:
+
+- que permite identificar directa o indirectamente a una persona;
+- que atributo describe a una persona;
+- que documento, log, ticket, reporte o proveedor contiene datos personales;
+- que combinacion de campos permite reidentificar;
+- que datos tienen reglas especiales por sensibilidad, edad, finalidad o contexto.
+
+RUT, email y telefono son senales fuertes en Chile, pero el tratamiento de datos
+personales incluye mucho mas.
+
 ## Identificadores directos
 
 - RUT.
@@ -11,6 +24,8 @@ Usa esta taxonomia para revisar modelos, APIs, planillas, logs y documentos.
 - Telefono.
 - Direccion.
 - Firma.
+- Patente asociada a una persona.
+- Identificador de credencial o cuenta nominativa.
 
 Riesgo tipico: usar un identificador directo como primary key, login universal o clave
 de integracion.
@@ -43,6 +58,11 @@ indirectamente a una persona.
 - Comuna, region o ubicacion.
 - Preferencias.
 - Historial de compra o uso.
+- Historial academico.
+- Historial laboral.
+- Relaciones familiares o cargas.
+- Reclamos, solicitudes o interacciones de soporte.
+- Imagen, voz o grabaciones.
 
 Riesgo tipico: combinaciones que permiten reidentificar aunque no exista RUT o email.
 
@@ -121,6 +141,11 @@ relacional principal.
 - Dashboards BI.
 - Capturas de pantalla.
 - Tickets de soporte.
+- Prompts y respuestas de IA.
+- Transcripciones de llamadas.
+- Archivos OCR.
+- Correos electronicos.
+- Repositorios documentales.
 
 Riesgo tipico: los equipos no los consideran "sistema", pero tambien son tratamiento de
 datos personales.

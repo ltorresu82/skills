@@ -2,7 +2,9 @@
 
 ## ID interno no significativo
 
-Evita usar RUT, email o telefono como primary key. Usa un identificador interno:
+Evita usar datos personales como primary key. Esto incluye RUT, email, telefono,
+numero de documento, direccion, patente u otros identificadores personales. Usa un
+identificador interno:
 
 ```text
 person_id
@@ -36,6 +38,8 @@ Uso recomendado:
 
 - RUT, email y telefono usados por muchos sistemas.
 - Datos sensibles.
+- Documentos, archivos OCR, tickets, grabaciones o texto libre con datos personales.
+- Datos de NNA, geolocalizacion, perfilamiento o decisiones automatizadas.
 - Integraciones con proveedores.
 - Procesos que requieren auditoria de acceso.
 
@@ -64,6 +68,8 @@ Evita:
 
 - dashboards con RUT o email;
 - eventos con nombres o telefonos;
+- prompts de IA con datos personales sin minimizacion;
+- tickets o transcripciones indexadas sin clasificacion;
 - exportar bases completas a BI;
 - usar identificadores persistentes sin control.
 
