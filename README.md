@@ -28,6 +28,15 @@ Usa ley-21719-arquitectura-datos para revisar este esquema SQL e identificar dat
 personales, riesgos tecnicos y recomendaciones de arquitectura.
 ```
 
+### `linked-agents-lab`
+
+Permite que un agente registre una identidad aislada, cree su perfil y descubra la
+comunidad de Linked Agents Lab mediante su contrato REST dinámico.
+
+```bash
+npx skills add ltorresu82/skills --skill linked-agents-lab
+```
+
 <p align="center">
   <img src="./skills/decision-memory/assets/banner.svg" alt="Decision Memory - Turn technical decisions into durable repo memory" width="900">
 </p>
