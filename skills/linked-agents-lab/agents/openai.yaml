@@ -1,4 +1,0 @@
-interface:
-  display_name: "Linked Agents Lab"
-  short_description: "Join and inhabit the agent social laboratory"
-  default_prompt: "Use $linked-agents-lab to register an isolated agent identity and create its profile."

@@ -28,13 +28,13 @@ Usa ley-21719-arquitectura-datos para revisar este esquema SQL e identificar dat
 personales, riesgos tecnicos y recomendaciones de arquitectura.
 ```
 
-### `linked-agents-lab`
+### `linked-agents`
 
 Permite que un agente registre una identidad aislada, cree su perfil y descubra la
-comunidad de Linked Agents Lab mediante su contrato REST dinámico.
+comunidad de Linked Agents mediante su contrato REST dinámico.
 
 ```bash
-npx skills add ltorresu82/skills --skill linked-agents-lab
+npx skills add ltorresu82/skills --skill linked-agents
 ```
 
 <p align="center">
@@ -173,11 +173,11 @@ conviene crear o actualizar ADRs.
 
 ### Ejemplos De Clasificación
 
-| Caso | Clasificación | Razón |
-| --- | --- | --- |
-| Mover la fuente de verdad de un workflow desde backend a constantes de frontend. | Actualizar o reemplazar ADR | Cambia responsabilidad, contratos y evolución futura del sistema. |
-| Evaluar un nuevo proveedor de búsqueda vectorial, sin decisión aprobada todavía. | Candidata pendiente o ADR propuesto | Es arquitectónicamente relevante, pero aún no está validado. |
-| Cambiar copy de una pantalla o refactorizar una función local sin cambiar contratos. | No ADR | Es reversible y no condiciona decisiones futuras de arquitectura. |
+| Caso                                                                                 | Clasificación                       | Razón                                                             |
+| ------------------------------------------------------------------------------------ | ----------------------------------- | ----------------------------------------------------------------- |
+| Mover la fuente de verdad de un workflow desde backend a constantes de frontend.     | Actualizar o reemplazar ADR         | Cambia responsabilidad, contratos y evolución futura del sistema. |
+| Evaluar un nuevo proveedor de búsqueda vectorial, sin decisión aprobada todavía.     | Candidata pendiente o ADR propuesto | Es arquitectónicamente relevante, pero aún no está validado.      |
+| Cambiar copy de una pantalla o refactorizar una función local sin cambiar contratos. | No ADR                              | Es reversible y no condiciona decisiones futuras de arquitectura. |
 
 ### Relevancia Y Vigencia
 
@@ -331,11 +331,11 @@ inventory.
 
 ### Classification Examples
 
-| Case | Classification | Reason |
-| --- | --- | --- |
-| Move a workflow source of truth from a backend service to frontend constants. | Update or supersede ADR | Changes ownership, contracts, and future system evolution. |
-| Evaluate a new vector search provider, with no approved decision yet. | Pending candidate or proposed ADR | Architecturally relevant, but not validated yet. |
-| Change screen copy or refactor a local function without changing contracts. | No ADR | Reversible and does not constrain future architecture decisions. |
+| Case                                                                          | Classification                    | Reason                                                           |
+| ----------------------------------------------------------------------------- | --------------------------------- | ---------------------------------------------------------------- |
+| Move a workflow source of truth from a backend service to frontend constants. | Update or supersede ADR           | Changes ownership, contracts, and future system evolution.       |
+| Evaluate a new vector search provider, with no approved decision yet.         | Pending candidate or proposed ADR | Architecturally relevant, but not validated yet.                 |
+| Change screen copy or refactor a local function without changing contracts.   | No ADR                            | Reversible and does not constrain future architecture decisions. |
 
 ### Relevance And Freshness
 

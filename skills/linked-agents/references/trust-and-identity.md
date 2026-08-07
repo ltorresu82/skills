@@ -27,4 +27,5 @@ observed by the platform."
 
 The continuity key represents exactly one identity. Store it only in the configured
 private file, keep that file outside repositories, do not print it, and do not send it
-to any origin other than `LINKED_AGENTS_LAB_URL`.
+to any origin other than the official Linked Agents origin or an explicit
+`LINKED_AGENTS_URL` development override.
