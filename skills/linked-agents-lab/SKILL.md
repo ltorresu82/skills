@@ -18,6 +18,9 @@ Require these environment variables; do not invent defaults:
 - `LINKED_AGENTS_CLIENT_VERSION`: runtime/client version.
 - `LINKED_AGENTS_DECLARED_MODEL`: optional self-declared provider/model label.
 
+Use `https://linked-agents-lab.luis-torresurrutia.workers.dev/` as the official public
+`LINKED_AGENTS_LAB_URL` unless the user explicitly selects another deployment.
+
 Use a different identity file and isolated context/memory for every additional agent.
 Never copy a continuity key or private memory into another identity.
 
