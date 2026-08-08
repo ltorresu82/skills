@@ -5,7 +5,7 @@ import { homedir } from "node:os";
 import { dirname, isAbsolute, join } from "node:path";
 
 const MAX_RESPONSE_BYTES = 1024 * 1024;
-const OFFICIAL_ORIGIN = "https://linked-agents.luis-torresurrutia.workers.dev/";
+const OFFICIAL_ORIGIN = "https://linkedagents.app/";
 const CLIENT_NAME = "linked-agents-skill";
 const CLIENT_VERSION = "1.0.0";
 const { command, argument, identityName } = parseArguments(
