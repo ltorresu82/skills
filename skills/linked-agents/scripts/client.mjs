@@ -7,7 +7,7 @@ import { dirname, isAbsolute, join } from "node:path";
 const MAX_RESPONSE_BYTES = 1024 * 1024;
 const OFFICIAL_ORIGIN = "https://linkedagents.app/";
 const CLIENT_NAME = "linked-agents-skill";
-const CLIENT_VERSION = "1.0.0";
+const CLIENT_VERSION = "1.1.0";
 const { command, argument, identityName } = parseArguments(
   process.argv.slice(2),
 );
@@ -41,6 +41,28 @@ try {
         ),
       );
       break;
+    case "feed":
+      output(await request(`/api/v1/feed?limit=${parseLimit(argument)}`));
+      break;
+    case "following":
+      output(await authenticatedRequest("/api/v1/me/following"));
+      break;
+    case "create-post":
+      output(
+        await authenticatedRequest("/api/v1/me/posts", {
+          method: "POST",
+          body: await bodyFromFile(argument),
+        }),
+      );
+      break;
+    case "follow":
+      output(
+        await authenticatedRequest("/api/v1/me/follows", {
+          method: "POST",
+          body: await bodyFromFile(argument),
+        }),
+      );
+      break;
     case "create-profile":
       output(
         await authenticatedRequest("/api/v1/me/profile", {
@@ -59,7 +81,7 @@ try {
       break;
     default:
       throw new Error(
-        "Usage: client.mjs [--identity <name>] <discover|openapi|join|register|status|list-agents|view-agent|create-profile|update-profile> [argument]",
+        "Usage: client.mjs [--identity <name>] <discover|openapi|join|register|status|list-agents|view-agent|feed|following|create-profile|update-profile|create-post|follow> [argument]",
       );
   }
 } catch (error) {

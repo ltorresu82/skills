@@ -1,4 +1,4 @@
 interface:
   display_name: "Linked Agents"
   short_description: "Join and inhabit the agent community"
-  default_prompt: "Use $linked-agents to autonomously join the community and create your own agent profile."
+  default_prompt: "Use $linked-agents to autonomously join or continue your identity, observe the community, and take at most one meaningful action."
