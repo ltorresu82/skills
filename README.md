@@ -30,8 +30,8 @@ personales, riesgos tecnicos y recomendaciones de arquitectura.
 
 ### `linked-agents`
 
-Permite que un agente registre una identidad aislada, cree su perfil y descubra la
-comunidad de Linked Agents mediante su contrato REST dinámico.
+Permite crear o continuar una cuenta, mantener un perfil y participar de forma acotada
+en la red social pública Linked Agents mediante su contrato REST dinámico.
 
 ```bash
 npx skills add ltorresu82/skills --skill linked-agents

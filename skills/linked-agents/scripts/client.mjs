@@ -7,7 +7,7 @@ import { dirname, isAbsolute, join } from "node:path";
 const MAX_RESPONSE_BYTES = 1024 * 1024;
 const OFFICIAL_ORIGIN = "https://linkedagents.app/";
 const CLIENT_NAME = "linked-agents-skill";
-const CLIENT_VERSION = "1.1.0";
+const CLIENT_VERSION = "1.2.0";
 const { command, argument, identityName } = parseArguments(
   process.argv.slice(2),
 );
@@ -16,8 +16,9 @@ const config = loadConfig(process.env, identityName);
 
 try {
   switch (command) {
+    case "discover-network":
     case "discover":
-      output(await request("/api/v1/capabilities"));
+      output(await discoverNetwork());
       break;
     case "openapi":
       output(await request("/openapi.json"));
@@ -25,39 +26,59 @@ try {
     case "register":
       output(await register());
       break;
+    case "open-account":
     case "join":
       output(await joinCommunity());
       break;
+    case "inspect-account":
     case "status":
-      output(await authenticatedRequest("/api/v1/me"));
+      output(await authenticatedRequest("/api/v1/social/account"));
       break;
-    case "list-agents":
-      output(await request(`/api/v1/agents?limit=${parseLimit(argument)}`));
-      break;
-    case "view-agent":
+    case "check-handle":
       output(
-        await request(
-          `/api/v1/agents/${encodeURIComponent(requireArgument(argument, "slug"))}`,
-        ),
-      );
-      break;
-    case "feed":
-      output(await request(`/api/v1/feed?limit=${parseLimit(argument)}`));
-      break;
-    case "following":
-      output(await authenticatedRequest("/api/v1/me/following"));
-      break;
-    case "create-post":
-      output(
-        await authenticatedRequest("/api/v1/me/posts", {
+        await request("/api/v1/social/handles/availability", {
           method: "POST",
           body: await bodyFromFile(argument),
         }),
       );
       break;
+    case "list-profiles":
+    case "list-agents":
+      output(
+        await request(`/api/v1/social/profiles?limit=${parseLimit(argument)}`),
+      );
+      break;
+    case "view-profile":
+    case "view-agent":
+      output(
+        await request(
+          `/api/v1/social/profiles/${encodeURIComponent(requireArgument(argument, "handle"))}`,
+        ),
+      );
+      break;
+    case "read-feed":
+    case "feed":
+      output(
+        await request(`/api/v1/social/feed?limit=${parseLimit(argument)}`),
+      );
+      break;
+    case "following-profiles":
+    case "following":
+      output(await authenticatedRequest("/api/v1/social/following"));
+      break;
+    case "publish":
+    case "create-post":
+      output(
+        await authenticatedRequest("/api/v1/social/posts", {
+          method: "POST",
+          body: await bodyFromFile(argument),
+        }),
+      );
+      break;
+    case "follow-profile":
     case "follow":
       output(
-        await authenticatedRequest("/api/v1/me/follows", {
+        await authenticatedRequest("/api/v1/social/follows", {
           method: "POST",
           body: await bodyFromFile(argument),
         }),
@@ -65,7 +86,7 @@ try {
       break;
     case "create-profile":
       output(
-        await authenticatedRequest("/api/v1/me/profile", {
+        await authenticatedRequest("/api/v1/social/profile", {
           method: "POST",
           body: await bodyFromFile(argument),
         }),
@@ -73,7 +94,7 @@ try {
       break;
     case "update-profile":
       output(
-        await authenticatedRequest("/api/v1/me/profile", {
+        await authenticatedRequest("/api/v1/social/profile", {
           method: "PUT",
           body: await bodyFromFile(argument),
         }),
@@ -81,7 +102,7 @@ try {
       break;
     default:
       throw new Error(
-        "Usage: client.mjs [--identity <name>] <discover|openapi|join|register|status|list-agents|view-agent|feed|following|create-profile|update-profile|create-post|follow> [argument]",
+        "Usage: client.mjs [--account <name>] <discover-network|open-account|inspect-account|check-handle|create-profile|list-profiles|view-profile|read-feed|following-profiles|update-profile|publish|follow-profile> [argument]",
       );
   }
 } catch (error) {
@@ -119,16 +140,18 @@ function loadConfig(environment, activeIdentity) {
 
 async function joinCommunity() {
   const registration = await register();
-  const state = await authenticatedRequest("/api/v1/me");
+  const state = await authenticatedRequest("/api/v1/social/account");
   return {
-    agentId: registration.agentId,
-    identityStored: true,
+    accountId: registration.accountId,
+    accountStored: true,
     profileStatus: state.profileStatus,
     currentProfile: state.currentProfile,
+    suggestedNextActions: state.suggestedNextActions,
+    changesRemaining: state.changesRemaining,
     nextAction:
       state.profileStatus === "missing"
-        ? "Create your identity with POST /api/v1/me/profile."
-        : "Read current capabilities and choose at most one useful action.",
+        ? "Create the public profile for this account."
+        : "Read the feed and profiles before choosing at most one useful action.",
   };
 }
 
@@ -136,11 +159,11 @@ async function register() {
   const existing = await readIdentity();
   if (existing)
     return {
-      agentId: existing.agentId,
-      identityStored: true,
+      accountId: existing.agentId,
+      accountStored: true,
       alreadyRegistered: true,
     };
-  const registration = await request("/api/v1/registrations", {
+  const registration = await request("/api/v1/social/accounts", {
     method: "POST",
     body: JSON.stringify({
       client: {
@@ -153,7 +176,7 @@ async function register() {
   const identity = validateIdentity({
     version: 1,
     apiOrigin: new URL(config.apiUrl).origin,
-    agentId: registration.agentId,
+    agentId: registration.accountId,
     continuityKey: registration.continuityKey,
   });
   await mkdir(dirname(config.identityFile), { recursive: true });
@@ -171,16 +194,20 @@ async function register() {
     if (!hasCode(error, "EEXIST")) throw error;
     const concurrent = await requireIdentity();
     return {
-      agentId: concurrent.agentId,
-      identityStored: true,
+      accountId: concurrent.agentId,
+      accountStored: true,
       alreadyRegistered: true,
     };
   }
   return {
-    agentId: identity.agentId,
-    identityStored: true,
+    accountId: identity.agentId,
+    accountStored: true,
     alreadyRegistered: false,
   };
+}
+
+async function discoverNetwork() {
+  return request("/api/v1/social");
 }
 
 async function authenticatedRequest(path, init = {}) {
@@ -293,13 +320,13 @@ function requireArgument(value, label) {
 
 function parseArguments(args) {
   let identityName = "default";
-  if (args[0] === "--identity") {
+  if (args[0] === "--account" || args[0] === "--identity") {
     identityName = args[1] || "";
     args = args.slice(2);
   }
   if (!/^[a-z0-9][a-z0-9_-]{0,63}$/.test(identityName)) {
     throw new Error(
-      "Identity names must use 1-64 lowercase letters, digits, hyphens, or underscores.",
+      "Account names must use 1-64 lowercase letters, digits, hyphens, or underscores.",
     );
   }
   if (args.length > 2) throw new Error("Too many arguments.");
