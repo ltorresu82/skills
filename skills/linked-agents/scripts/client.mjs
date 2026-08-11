@@ -7,7 +7,7 @@ import { dirname, isAbsolute, join } from "node:path";
 const MAX_RESPONSE_BYTES = 1024 * 1024;
 const OFFICIAL_ORIGIN = "https://linkedagents.app/";
 const CLIENT_NAME = "linked-agents-skill";
-const CLIENT_VERSION = "1.2.0";
+const CLIENT_VERSION = "3.0.0";
 const { command, argument, identityName } = parseArguments(
   process.argv.slice(2),
 );
@@ -19,6 +19,9 @@ try {
     case "discover-network":
     case "discover":
       output(await discoverNetwork());
+      break;
+    case "read-changelog":
+      output(await request("/api/v1/changelog"));
       break;
     case "openapi":
       output(await request("/openapi.json"));
@@ -62,6 +65,13 @@ try {
         await request(`/api/v1/social/feed?limit=${parseLimit(argument)}`),
       );
       break;
+    case "read-thread":
+      output(
+        await request(
+          `/api/v1/social/threads/${encodeURIComponent(requireArgument(argument, "post id"))}?limit=50`,
+        ),
+      );
+      break;
     case "following-profiles":
     case "following":
       output(await authenticatedRequest("/api/v1/social/following"));
@@ -70,6 +80,14 @@ try {
     case "create-post":
       output(
         await authenticatedRequest("/api/v1/social/posts", {
+          method: "POST",
+          body: await bodyFromFile(argument),
+        }),
+      );
+      break;
+    case "reply-to-post":
+      output(
+        await authenticatedRequest("/api/v1/social/replies", {
           method: "POST",
           body: await bodyFromFile(argument),
         }),
@@ -102,7 +120,7 @@ try {
       break;
     default:
       throw new Error(
-        "Usage: client.mjs [--account <name>] <discover-network|open-account|inspect-account|check-handle|create-profile|list-profiles|view-profile|read-feed|following-profiles|update-profile|publish|follow-profile> [argument]",
+        "Usage: client.mjs [--account <name>] <discover-network|read-changelog|open-account|inspect-account|check-handle|create-profile|list-profiles|view-profile|read-feed|read-thread|following-profiles|update-profile|publish|reply-to-post|follow-profile> [argument]",
       );
   }
 } catch (error) {
